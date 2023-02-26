@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRADING SYSTEM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+ 
+    <section class="interface">
+      <marquee behavior="scroll" direction="left">
+         <h3> Please Kindly Refresh This Page To Stop The Music!!!!!</h3>
+         </marquee>
+        <h1 style="color:palevioletred ;text-align: center;">GRADING SYSTEM</h1>
+        <input type="text" id="userInput" value="" >
+        <button onclick=" checkScore()"> Check Score</button>
+        <div id="disp" style="color:rgb(179, 73, 108) ; text-align: center; "></div>
+        <h1 style="font-size:40px ;"></h1>
+       
+    </section>
+    
+    <script>
+      var stand = new Audio("stand.mp3.mp3")     
+      var wrong = new Audio("wrong.mp3")
+      var poor = new Audio("poor.mp3")
+      var good = new Audio("good.mp3")
+      var fair = new Audio("fair.mp3")
+      var failure = new Audio("failure.webm")
+      var buga = new Audio("buga.mp3")
+       function checkScore() {
+          var score = userInput.value
+          if( score == ""){
+            disp.innerHTML="<h3 style='font-size:40px ;'>Kindly Input Your Score</h3> + <img src='https://gifdb.com/images/high/teeth-grinding-emoji-ka0gynb4b92rmeab.gif'width='300px' height='300px' > "
+            wrong.play()
+          }else if (score<=39 && score >=0){
+            disp.innerHTML="<h3 style='font-size:40px ;'>F-fail</h3> + <img src='https://gifdb.com/images/high/just-kidding-emoji-73npyoykelsnsgu4.webp' width='300px' height='300px'> "
+             failure .play()
+          }else if (score>=40 && score<=44 ){
+             disp.innerHTML="<h3 style='font-size:40px ;'>E-poor</h3> +  <img src='./poor-removebg-preview (1).png' width='300px' height='300px'>  "
+             poor.play()
+          }else if (score>=45 && score<=49 ){
+             disp.innerHTML="<h3 style='font-size:40px ;'>D-Fair</h3> +  <img src='https://gifdb.com/images/high/smiley-blushing-emoji-emoticon-39ml3pyodcp0w25k.webp' width='300px' height='300px'> "
+             fair.play()
+          }else if (score>=50 && score<=59 ){
+             disp.innerHTML="<h3 style='font-size:40px ;'>C-Good</h3> + <img src='https://media.tenor.com/CcUtdYsxSnwAAAAj/ep00000-emoji.gif' width='300px' height='300px'>"
+             good.play()
+          }else if (score>=60 && score<=69 ){
+             disp.innerHTML="<h3 style='font-size:40px ;'>B-Very Good</h3> +  <img src='https://gifdb.com/images/high/blushing-hug-emoji-3oiog8j560s1blzu.webp'width='300px' height='300px'> "
+              buga.play()
+          }else if (score>=70 && score<=100 ){
+             disp.innerHTML="<h3 style='font-size:40px ;'>A-Excellent</h3> + <img src='https://gifdb.com/images/high/thumbs-up-emoji-w11j1jci6edzk8zg.webp' width='300px' height='300px' >"
+             stand.play()
+          }else{
+            disp.innerHTML="<h3 style='font-size:40px ;'>Invalid</h3> +  <img src='./angry-removebg-preview.png' width='300px' height='300px' > "
+            wrong.play()
+          }
+          userInput.value =""
+       }
+    </script>
+</body>
+
+</html>
